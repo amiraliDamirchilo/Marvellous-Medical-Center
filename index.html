@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marvellous Medical Center &amp; Dental Clinics | Rolla, Sharjah</title>
+<meta name="description" content="Marvellous Medical Center and Dental Clinics, Rolla, Sharjah. Full body checkup from AED 75, GP, dental and orthodontics, blood tests. All major insurance accepted. Free parking. Open until 11 PM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* Layout concept: a neighbourhood clinic receipt. Clean white, one confident emerald, a yellow price tag that says the number people came for. */
+:root{
+  --white:#FFFFFF;--paper:#F4F7F5;--em:#0F7A5A;--em-2:#0B5E45;--mint:#DDF2EA;--tag:#FFD84D;--ink:#14211C;--soft:#56645E;--line:rgba(20,33,28,.12);
+  --display:'Familjen Grotesk',system-ui,sans-serif;--body:'Atkinson Hyperlegible',system-ui,sans-serif;--ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden}
+a{color:inherit}p{max-width:60ch}
+.wrap{width:100%;max-width:1220px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
+:focus-visible{outline:3px solid var(--tag);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:14px;font-family:var(--display);font-weight:600;font-size:17px;text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--ease),background .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-em{background:var(--em);color:#fff}.btn-em:hover{background:var(--em-2)}
+.btn-ghost{background:var(--white);color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.top{background:var(--em);color:#fff;font-size:14px}
+.top .wrap{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;padding-block:9px;text-align:center}
+.top b{color:var(--tag)}
+.nav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo i{width:38px;height:38px;border-radius:11px;background:var(--em);color:#fff;display:grid;place-items:center;font-style:normal;font-family:var(--display);font-weight:700;font-size:20px}
+.logo b{font-family:var(--display);font-size:18px;display:block;line-height:1.1}
+.logo small{font-size:12px;color:var(--soft)}
+.menu{display:flex;gap:24px;font-size:15px}
+.menu a{text-decoration:none;color:var(--soft)}.menu a:hover{color:var(--ink)}
+.nav .btn{padding:11px 16px;font-size:15px}
+
+.hero{background:linear-gradient(180deg,var(--mint),var(--white));overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;padding-block:clamp(40px,6vw,80px)}
+.hero-copy{min-width:0}
+.pill{display:inline-flex;gap:8px;align-items:center;background:#fff;border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;color:var(--em);box-shadow:0 4px 16px rgba(15,122,90,.12)}
+.hero h1{font-size:clamp(46px,6.6vw,96px);margin:20px 0}
+.hero h1 .price{display:inline-block;background:var(--tag);padding:0 .18em;border-radius:.12em;transform:rotate(-2deg)}
+.hero .lead{font-size:clamp(18px,1.6vw,21px);color:var(--soft);max-width:34ch;margin-bottom:28px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.perks{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.perks span{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:15px;font-weight:700}
+.stage{position:relative;aspect-ratio:1/1;max-width:100%;min-width:0}
+#pill{position:absolute;inset:0;width:100%;height:100%;cursor:pointer}
+.stage .hint{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);font-size:14px;color:var(--soft);white-space:nowrap}
+.stage .tagc{position:absolute;right:6%;top:10%;background:var(--tag);font-family:var(--display);font-weight:700;padding:12px 16px;border-radius:14px;transform:rotate(5deg);box-shadow:0 12px 30px rgba(0,0,0,.12);line-height:1.1}
+.stage .tagc b{display:block;font-size:34px}
+
+section{padding-block:clamp(70px,9vw,120px)}
+.h2r{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,60px);align-items:end;margin-bottom:clamp(30px,4vw,50px)}
+.h2r h2{font-size:clamp(38px,5vw,68px)}.h2r p{color:var(--soft)}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--paper);border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:12px;text-decoration:none;min-width:0;transition:transform .3s var(--ease),background .3s}
+.card:hover{transform:translateY(-4px);background:var(--mint)}
+.card .ico{width:52px;height:52px;border-radius:14px;background:#fff;display:grid;place-items:center;color:var(--em)}
+.card .ico svg{width:28px;height:28px}
+.card h3{font-size:28px}.card p{color:var(--soft);font-size:16px}
+.card .go{margin-top:auto;font-weight:700;color:var(--em)}
+.card.feature{background:var(--em);color:#fff;grid-row:span 2}
+.card.feature p{color:#CFEDE2}.card.feature .go{color:var(--tag)}
+.card.feature .big{font-family:var(--display);font-size:clamp(70px,8vw,110px);line-height:.9;color:var(--tag)}
+.card.feature .big small{font-size:.3em;color:#fff;margin-left:6px}
+
+.docs{background:var(--paper)}
+.dlist{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.dr{background:#fff;border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.dr .av{width:60px;height:60px;border-radius:50%;background:var(--mint);color:var(--em);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:24px}
+.dr h3{font-size:26px}.dr .role{color:var(--em);font-weight:700;font-size:15px}
+.dr blockquote{color:var(--soft);font-size:16px;border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
+.dr cite{display:block;font-style:normal;font-size:14px;margin-top:6px;color:var(--ink)}
+
+.why .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.w{border:2px solid var(--ink);border-radius:20px;padding:24px;min-width:0}
+.w b{font-family:var(--display);font-size:40px;display:block;line-height:1;color:var(--em)}
+.w h3{font-size:22px;margin:10px 0 6px}.w p{color:var(--soft);font-size:15px}
+
+.revs .wrap{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(30px,5vw,70px);align-items:start}
+.score b{font-family:var(--display);font-size:clamp(110px,14vw,180px);line-height:.85;color:var(--em);display:block}
+.score .st{color:#E6A700;letter-spacing:4px;font-size:22px;margin:12px 0 6px}
+.qs{display:grid;gap:14px}
+.q{background:var(--paper);border-radius:20px;padding:22px 24px}
+.q p{font-size:17px}.q cite{display:block;font-style:normal;color:var(--soft);font-size:14px;margin-top:8px}
+
+.visit{background:var(--ink);color:#fff}
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:start}
+.visit h2{font-size:clamp(38px,5vw,68px);margin-bottom:24px}
+.r{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.r span{color:var(--tag);font-weight:700}
+.book{background:#fff;color:var(--ink);border-radius:24px;padding:clamp(24px,4vw,38px);min-width:0}
+.book h3{font-size:30px;margin-bottom:6px}.book>p{color:var(--soft);margin-bottom:18px;font-size:16px}
+.book form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.book label{display:grid;gap:6px;font-size:14px;font-weight:700;color:var(--soft)}
+.book input,.book select{font:inherit;font-size:16px;padding:13px 14px;border-radius:12px;border:2px solid var(--line);width:100%;color:var(--ink);background:#fff}
+.book input:focus,.book select:focus{outline:none;border-color:var(--em)}
+.book .full{grid-column:1/-1}.book button{grid-column:1/-1;justify-content:center;margin-top:4px}
+footer{background:var(--ink);color:#9AA8A2;font-size:14px;border-top:1px solid rgba(255,255,255,.1)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:24px}
+.dock{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;transform:translateY(160%);transition:transform .5s var(--ease)}
+.dock.show{transform:none}.dock .btn{box-shadow:0 14px 30px -8px rgba(15,122,90,.6)}
+
+@media (max-width:980px){
+  .menu{display:none}
+  .hero .wrap,.h2r,.revs .wrap,.visit .wrap{grid-template-columns:1fr}
+  .stage{max-width:460px;margin:0 auto;width:100%}
+  .cards,.dlist{grid-template-columns:1fr 1fr}
+  .card.feature{grid-row:auto;grid-column:1/-1}
+  .why .grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .cards,.dlist,.why .grid,.book form{grid-template-columns:1fr}
+  .r{grid-template-columns:1fr;gap:2px}
+  .nav .btn span{display:none}.logo small{display:none}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.1 1.3 15.2 0 12 0 5.5 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7c1.7.9 3.7 1.4 5.7 1.4 6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.4z"/></symbol>
+</svg>
+
+<div class="top"><div class="wrap"><span>Full body checkup <b>AED 75</b></span><span>All major insurance accepted</span><span>Free parking</span><span>Open until <b>11 PM</b></span></div></div>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top"><i>M</i><span><b>Marvellous</b><small>Medical Center &amp; Dental Clinics</small></span></a>
+  <nav class="menu" aria-label="Main"><a href="#services">Services</a><a href="#doctors">Doctors</a><a href="#why">Why us</a><a href="#visit">Visit</a></nav>
+  <a class="btn btn-em wa" data-msg="Hello Marvellous Medical Center, I'd like to book an appointment." href="#"><svg><use href="#wa"/></svg><span>Book on WhatsApp</span></a>
+</div></header>
+
+<main id="top">
+<section class="hero" style="padding:0" aria-label="Welcome">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="pill">Rolla, Sharjah · 4.8 ★ from 553 reviews</span>
+      <h1>Your full body checkup for <span class="price">AED 75</span>.</h1>
+      <p class="lead">Doctors, dentists and blood tests under one roof, open late, with free parking and all major insurance accepted.</p>
+      <div class="ctas">
+        <a class="btn btn-em wa" data-msg="Hello, I'd like to book the AED 75 full body checkup." href="#"><svg><use href="#wa"/></svg>Book my checkup</a>
+        <a class="btn btn-ghost" href="tel:+97165614266">Call 06 561 4266</a>
+      </div>
+      <div class="perks"><span>✓ All major insurance</span><span>✓ Free parking</span><span>✓ Open until 11 PM</span></div>
+    </div>
+    <div class="stage">
+      <canvas id="pill" aria-label="A 3D capsule. Tap to open it."></canvas>
+      <div class="tagc">Checkup<b>AED 75</b></div>
+      <span class="hint">Tap the capsule</span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="h2r"><h2>One visit. Everything checked.</h2><p>Family doctors, dentists and a lab in the same clinic, so you don't need three appointments in three places.</p></div>
+    <div class="cards">
+      <a class="card feature wa" data-msg="Hello, I'd like to book the AED 75 full body checkup." href="#"><span>Most booked</span><div class="big">75<small>AED</small></div><h3>Full body checkup</h3><p>A complete health check at a price that makes it easy to stop putting it off. Covered or not, you'll know the cost upfront.</p><span class="go">Book my checkup →</span></a>
+      <a class="card wa" data-msg="Hello, I'd like to see a dentist." href="#"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4 2 7 .4 2.6 1 6.5 2.5 6.5S9 17 10 15.5c.6-.9 1.4-.9 2 0 1 1.5 1 5.5 2.5 5.5s2.1-3.9 2.5-6.5c.5-3 2-4 2-7C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></span><h3>Dental clinic</h3><p>Check-ups, fillings, root canals and extractions, only when you really need them.</p><span class="go">See a dentist →</span></a>
+      <a class="card wa" data-msg="Hello, I'd like to ask about orthodontic treatment." href="#"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h18M6 9v6M10 9v6M14 9v6M18 9v6"/></svg></span><h3>Orthodontics</h3><p>Braces and teeth alignment, done carefully with results patients love.</p><span class="go">Ask about braces →</span></a>
+      <a class="card wa" data-msg="Hello, I'd like to see a general practitioner." href="#"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3v6a4 4 0 008 0V3M10 13v3a5 5 0 0010 0v-2"/><circle cx="20" cy="12" r="2"/></svg></span><h3>General practitioner</h3><p>Fevers, blood pressure, check-ups and advice from experienced doctors.</p><span class="go">See a GP →</span></a>
+      <a class="card wa" data-msg="Hello, I'd like to book a blood test / Vitamin D test." href="#"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3s6 7 6 11a6 6 0 01-12 0c0-4 6-11 6-11z"/></svg></span><h3>Blood tests</h3><p>Affordable blood test packages and Vitamin D tests, with results explained.</p><span class="go">Book a test →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="docs" id="doctors">
+  <div class="wrap">
+    <div class="h2r"><h2>Doctors patients name in their reviews.</h2><p>45 reviews mention caring staff. 17 mention an experienced doctor. These are some of the names.</p></div>
+    <div class="dlist">
+      <article class="dr"><span class="av">A</span><h3>Dr. Anu</h3><span class="role">Orthodontics</span><blockquote>"She fixed and aligned my teeth very nicely and carefully. I am really satisfied with the result."<cite>Salman</cite></blockquote></article>
+      <article class="dr"><span class="av">J</span><h3>Dr. Mohamed Jameel Raja</h3><span class="role">Dentist</span><blockquote>"We went for a tooth extraction, but he advised it was not necessary. Really appreciate his genuine care."<cite>Paris</cite></blockquote></article>
+      <article class="dr"><span class="av">S</span><h3>Dr. Sivapriya</h3><span class="role">Treating doctor</span><blockquote>"She gave me full information about the treatment. I was very relaxed for my whole treatment."<cite>Google review</cite></blockquote></article>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="h2r"><h2>Healthcare that fits a working day.</h2><p>Come after your shift. Park for free. Use your insurance.</p></div>
+    <div class="grid">
+      <div class="w"><b>11 PM</b><h3>Open late</h3><p>"You can visit anytime and the doctor is available most of the time."</p></div>
+      <div class="w"><b>P</b><h3>Free parking</h3><p>No circling Rolla looking for a spot.</p></div>
+      <div class="w"><b>✓</b><h3>Insurance</h3><p>Accepted by all major insurance providers in the UAE.</p></div>
+      <div class="w"><b>AED</b><h3>Fair prices</h3><p>Patients mention reasonable fees again and again.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="revs">
+  <div class="wrap">
+    <div class="score"><b>4.8</b><div class="st" aria-label="4.8 out of 5 stars">★★★★★</div><p style="color:var(--soft)">From 553 patients on Google.</p></div>
+    <div class="qs">
+      <blockquote class="q"><p>"We took the blood test packages and Vitamin D test at a very affordable price, along with a free dental consultation. Very clean and well organized."</p><cite>Prince Musa</cite></blockquote>
+      <blockquote class="q"><p>"The doctor took time to explain everything clearly and made sure I was comfortable before starting the treatment."</p><cite>Md Mahabub, Local Guide</cite></blockquote>
+      <blockquote class="q"><p>"All the staff were welcoming and very kind. Jincy, Betty, Nabila..."</p><cite>Google review</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Find us in Rolla.</h2>
+      <div class="r"><span>Address</span><div>103 Souq Al Rolla Building, Umm Tarafa St, behind KM Trading, Rolla, Sharjah</div></div>
+      <div class="r"><span>Hours</span><div>Open until 11 PM</div></div>
+      <div class="r"><span>Phone</span><div>06 561 4266</div></div>
+      <div class="r"><span>Parking</span><div>Free for patients</div></div>
+      <a class="btn btn-ghost" style="margin-top:24px" href="https://www.google.com/maps/search/?api=1&query=Marvellous+Medical+Center+Rolla+Sharjah" target="_blank" rel="noopener">Get directions</a>
+    </div>
+    <div class="book">
+      <h3>Book an appointment</h3><p>We'll confirm your time on WhatsApp.</p>
+      <form id="bk">
+        <label for="bS">Service<select id="bS"><option>Full body checkup (AED 75)</option><option>Dentist</option><option>Orthodontics</option><option>General practitioner</option><option>Blood test</option></select></label>
+        <label for="bD">Day<input id="bD" type="date"></label>
+        <label for="bI">Insurance<input id="bI" type="text" placeholder="Provider, or none"></label>
+        <label for="bN">Your name<input id="bN" type="text" autocomplete="name"></label>
+        <button class="btn btn-em" type="submit"><svg><use href="#wa"/></svg>Send booking on WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Marvellous Medical Center LLC SP · Rolla, Sharjah</span><span>GP · Dental · Orthodontics · Lab</span></div></footer>
+<div class="dock" id="dock"><a class="btn btn-em wa" data-msg="Hello, I'd like to book the AED 75 full body checkup." href="#"><svg><use href="#wa"/></svg>Book checkup AED 75</a></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  var PHONE='971505662307';
+  function url(m){return 'https://wa.me/'+PHONE+'?text='+encodeURIComponent(m)}
+  document.querySelectorAll('.wa').forEach(function(a){a.href=url(a.dataset.msg||'Hello Marvellous Medical Center');a.target='_blank';a.rel='noopener'});
+  var dock=document.getElementById('dock');addEventListener('scroll',function(){dock.classList.toggle('show',scrollY>innerHeight*.8)},{passive:true});
+  var d=document.getElementById('bD');d.value=new Date().toISOString().slice(0,10);d.min=d.value;
+  document.getElementById('bk').addEventListener('submit',function(e){e.preventDefault();var v=function(i){return document.getElementById(i).value||'-'};
+    window.open(url('Hello Marvellous Medical Center, I\'d like to book.\nService: '+v('bS')+'\nDay: '+v('bD')+'\nInsurance: '+v('bI')+'\nName: '+v('bN')),'_blank','noopener')});
+
+  if(!window.THREE)return;
+  var canvas=document.getElementById('pill'),stage=canvas.parentElement;
+  try{
+    var R=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true});
+    R.setPixelRatio(Math.min(devicePixelRatio,2));R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;
+    var S=new THREE.Scene(),C=new THREE.PerspectiveCamera(30,1,.1,100);C.position.set(0,0,10);
+    function col(h){return new THREE.Color(h).convertSRGBToLinear()}
+    var env=new THREE.Scene();env.add(new THREE.Mesh(new THREE.BoxGeometry(30,30,30),new THREE.MeshBasicMaterial({color:col(0x9FBFB2),side:THREE.BackSide})));
+    function panel(w,h,x,y,z,c,i){var m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({color:col(c).multiplyScalar(i),side:THREE.DoubleSide}));m.position.set(x,y,z);m.lookAt(0,0,0);env.add(m)}
+    panel(12,3,0,8,4,0xFFFFFF,2.4);panel(3,10,-9,0,4,0xFFFFFF,1.6);panel(3,10,9,0,2,0xDDF2EA,1.6);
+    var pm=new THREE.PMREMGenerator(R);S.environment=pm.fromScene(env,.03).texture;
+    S.add(new THREE.HemisphereLight(col(0xFFFFFF),col(0xBFD9CF),.6));var key=new THREE.DirectionalLight(col(0xFFFFFF),1.2);key.position.set(3,5,6);S.add(key);
+    var green=new THREE.MeshPhysicalMaterial({color:col(0x0F7A5A),roughness:.15,clearcoat:1,clearcoatRoughness:.05});
+    var white=new THREE.MeshPhysicalMaterial({color:col(0xF8FAF9),roughness:.2,clearcoat:1,clearcoatRoughness:.05});
+    function half(mat,dir){var g=new THREE.Group();var cyl=new THREE.Mesh(new THREE.CylinderGeometry(.9,.9,1.5,64,1,true),mat);cyl.position.y=.75*dir;g.add(cyl);
+      var cap=new THREE.Mesh(new THREE.SphereGeometry(.9,64,32,0,Math.PI*2,dir>0?0:Math.PI/2,Math.PI/2),mat);cap.position.y=1.5*dir;g.add(cap);return g}
+    var pill=new THREE.Group();S.add(pill);var top=half(green,1),bot=half(white,-1);pill.add(top);pill.add(bot);
+    // tiny granules inside
+    var gr=new THREE.Group();pill.add(gr);var gm=new THREE.MeshStandardMaterial({color:col(0xFFD84D),roughness:.5});
+    for(var i=0;i<40;i++){var s=new THREE.Mesh(new THREE.SphereGeometry(.09,12,8),gm);s.position.set((Math.random()-.5)*1.2,(Math.random()-.5)*1.6,(Math.random()-.5)*1.2);s.userData.v=s.position.clone().normalize().multiplyScalar(.02+Math.random()*.03);gr.add(s)}
+    gr.visible=false;
+    pill.rotation.set(.3,0,.9);
+    function size(){var w=canvas.clientWidth,h=canvas.clientHeight;if(!w)return;R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix()}
+    size();addEventListener('resize',size);
+    var open=0,target=0,mx=0,my=0;
+    addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+    canvas.addEventListener('click',function(){target=target?0:1;if(target){gr.visible=true;gr.children.forEach(function(s){s.position.set((Math.random()-.5)*.8,(Math.random()-.5)*.6,(Math.random()-.5)*.8)})}});
+    var visible=true,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,t0=performance.now();
+    new IntersectionObserver(function(es){visible=es[0].isIntersecting}).observe(stage);
+    (function loop(t){requestAnimationFrame(loop);if(!visible)return;var tt=(t-t0)/1000;
+      open+=(target-open)*.08;top.position.y=open*1.1;bot.position.y=-open*1.1;
+      if(open>.05){gr.children.forEach(function(s){s.position.add(s.userData.v.clone().multiplyScalar(open))})}if(open<.02)gr.visible=false;
+      pill.rotation.y+=reduce?0:.006;pill.rotation.x+=((.3+my*.6)-pill.rotation.x)*.05;pill.rotation.z+=((.9+mx*.5)-pill.rotation.z)*.05;
+      pill.position.y=reduce?0:Math.sin(tt*1.2)*.12;R.render(S,C)})(t0);
+  }catch(err){console.warn(err)}
+})();
+</script>
+</body>
+</html>
